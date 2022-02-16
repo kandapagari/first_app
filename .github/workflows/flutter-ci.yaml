@@ -37,12 +37,13 @@ jobs:
       
       # Get secrets from GitHub and decode it to get secrets.dart
       - name: Decode base64 secrets
-        run: echo $CLIENT_ID | base64 -d > lib/secrets.dart
+        run: sudo echo "${CLIENT_ID// /}" | base64 --decode > lib/secrets.dart
         # env:
         #   CLIENT_ID: ${{ secrets.CLIENT_ID }}
 
       # Get flutter dependencies.
-      - run: flutter pub get
+      - name: "Run flutter pub get"
+        run: flutter pub get
 
       # Check for any formatting issues in the code.
       # - run: flutter format --set-exit-if-changed --fix .
