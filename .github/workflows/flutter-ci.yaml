@@ -37,7 +37,7 @@ jobs:
       
       # Get secrets from GitHub and decode it to get secrets.dart
       - name: Decode base64 secrets
-        run: sudo echo "${CLIENT_ID// /}"
+        run: sudo echo ${{ secrets.CLIENT_ID }} | base64 --decode > lib/secrets.dart
         env:
           CLIENT_ID: ${{ secrets.CLIENT_ID }}
 
