@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -24,14 +25,16 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="first_app">
+  <meta name="google-signin-client_id" content="AIzaSyCWbwrIXbw_Twt9a10UwJ6xWkb9CJuNbgk">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="icon" type="image/png" href="favicon.png" />
 
   <title>first_app</title>
   <link rel="manifest" href="manifest.json">
 </head>
+
 <body>
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
@@ -39,6 +42,19 @@
   <script>
     var serviceWorkerVersion = null;
     var scriptLoaded = false;
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+    const firebaseConfig = {
+
+      apiKey: "AIzaSyCWbwrIXbw_Twt9a10UwJ6xWkb9CJuNbgk",
+      authDomain: "notes-app-bc726.firebaseapp.com",
+      projectId: "notes-app-bc726",
+      storageBucket: "notes-app-bc726.appspot.com",
+      messagingSenderId: "463111247842",
+      appId: "1:463111247842:web:1d77773a0e8a9fb1e28bbb",
+      measurementId: "G-1S3N0FW5KG"
+
+    };
     function loadMainDartJs() {
       if (scriptLoaded) {
         return;
@@ -100,5 +116,8 @@
       loadMainDartJs();
     }
   </script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
 </body>
+
 </html>

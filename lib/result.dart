@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterfire_ui/auth.dart';
 
 class Result extends StatelessWidget {
   final int totalScore;
@@ -31,7 +32,8 @@ class Result extends StatelessWidget {
             child: const Text('Restart Quiz'),
             onPressed: resetQuiz,
             style: TextButton.styleFrom(onSurface: Colors.amber),
-          )
+          ),
+          const SignOutButton()
         ],
       ),
     );
