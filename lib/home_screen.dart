@@ -58,7 +58,6 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
-
   void _resestQuiz() {
     setState(() {
       _questionIndex = 0;

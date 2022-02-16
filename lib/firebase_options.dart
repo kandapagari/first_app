@@ -61,7 +61,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '463111247842',
     projectId: 'notes-app-bc726',
     storageBucket: 'notes-app-bc726.appspot.com',
-    iosClientId: '463111247842-drosaodbfvfgj86r98nnhtaf3bsimigp.apps.googleusercontent.com',
+    iosClientId:
+        '463111247842-drosaodbfvfgj86r98nnhtaf3bsimigp.apps.googleusercontent.com',
     iosBundleId: 'com.example',
   );
 }
