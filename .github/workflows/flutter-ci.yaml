@@ -34,19 +34,20 @@ jobs:
         with:
           channel: "stable" # 'beta' # 'dev', 'alpha', default to: 'stable'
           # flutter-version: '1.12.x' # you can also specify exact version of flutter
+      
+      # Get secrets from GitHub and decode it to get secrets.dart
+      - name: Decode base64 secrets
+        run: echo $CLIENT_ID | base64 -d > lib/secrets.dart
+        # env:
+        #   CLIENT_ID: ${{ secrets.CLIENT_ID }}
 
       # Get flutter dependencies.
       - run: flutter pub get
 
       # Check for any formatting issues in the code.
-      # - run: flutter format --set-exit-if-changed .
+      - run: flutter format --set-exit-if-changed .
 
       # Statically analyze the Dart code for any errors.
-
-      - name: Decode base64 secrets
-        run: echo $SECRETS_FILE_CONTENT | base64 -d > lib/secrets.dart
-        env:
-          SECRETS_FILE_CONTENTS: ${{ secrets.SECRETS_FILE_CONTENT }}
 
       - run: flutter analyze .
 
