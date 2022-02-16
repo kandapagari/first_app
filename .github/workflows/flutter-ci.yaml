@@ -24,6 +24,10 @@ jobs:
     steps:
       # Setup Java environment in order to build the Android app.
       - uses: actions/checkout@v2
+      - name: Decode base64 secrets
+        run: echo $SECRETS_FILE_CONTENTS | base64 -d > lib/secrets.dart
+        env:
+          SECRETS_FILE_CONTENTS: ${{ secrets.SECRETS_FILE_CONTENTS }}
       - uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
